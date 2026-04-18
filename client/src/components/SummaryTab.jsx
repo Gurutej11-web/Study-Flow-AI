@@ -39,7 +39,7 @@ export default function SummaryTab({ data }) {
               <span className="w-5 h-5 bg-indigo-500/20 text-indigo-400 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                 {i + 1}
               </span>
-              <span className="text-sm text-slate-200 leading-relaxed">{idea}</span>
+              <span className="text-sm text-slate-200 leading-relaxed">{typeof idea === "string" ? idea : JSON.stringify(idea)}</span>
             </li>
           ))}
         </ul>
@@ -55,8 +55,8 @@ export default function SummaryTab({ data }) {
           <div className="grid gap-3">
             {data.definitions.map((d, i) => (
               <div key={i} className="bg-slate-900/60 border border-white/5 rounded-xl px-4 py-3">
-                <div className="font-semibold text-purple-300 text-sm mb-1">{d.term}</div>
-                <div className="text-sm text-slate-300 leading-relaxed">{d.definition}</div>
+                <div className="font-semibold text-purple-300 text-sm mb-1">{typeof d.term === "string" ? d.term : JSON.stringify(d.term)}</div>
+                <div className="text-sm text-slate-300 leading-relaxed">{typeof d.definition === "string" ? d.definition : JSON.stringify(d.definition)}</div>
               </div>
             ))}
           </div>

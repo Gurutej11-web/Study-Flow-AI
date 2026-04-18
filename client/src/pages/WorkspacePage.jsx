@@ -109,10 +109,15 @@ export default function WorkspacePage() {
       } else {
         res = await axios.post("/api/generate", { text, questionCount });
       }
-      setResults(res.data);
+      const data = res.data;
+      if (!data || !data.summary || !data.flashcards || !data.quiz || !data.studyPlan) {
+        throw new Error("Incomplete response from AI. Please try again.");
+      }
+      setResults(data);
       setActiveTab(0);
     } catch (err) {
-      setError(err.response?.data?.error || "Something went wrong. Please try again.");
+      const errMsg = err.response?.data?.error;
+      setError(typeof errMsg === "string" ? errMsg : errMsg ? JSON.stringify(errMsg) : "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
