@@ -18,20 +18,20 @@ const LS_KEY = "studyflow_last_session";
 const MAX_CHARS = 15000;
 const QUESTION_COUNTS = [5, 10, 15];
 const LOADING_STEPS = [
-  "Reading your content…",
-  "Identifying key concepts…",
-  "Generating summary…",
-  "Creating flashcards…",
-  "Building quiz questions…",
-  "Designing study plan…",
-  "Almost done…",
+  "Reading your contentï¿½",
+  "Identifying key conceptsï¿½",
+  "Generating summaryï¿½",
+  "Creating flashcardsï¿½",
+  "Building quiz questionsï¿½",
+  "Designing study planï¿½",
+  "Almost doneï¿½",
 ];
 
 const POPULAR_TOPICS = [
   "Photosynthesis", "World War II", "Newton's Laws of Motion",
   "The American Civil War", "Cell Division (Mitosis & Meiosis)",
   "Supply and Demand", "Shakespeare's Hamlet", "The French Revolution",
-  "DNA and Genetics", "Algebra — Quadratic Equations",
+  "DNA and Genetics", "Algebra ï¿½ Quadratic Equations",
 ];
 
 export default function WorkspacePage() {
@@ -376,7 +376,7 @@ export default function WorkspacePage() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                {overLimit ? "Text too long — trim it down" : mode === "topic" ? "Generate Study Materials" : "Generate Study Materials"}
+                {overLimit ? "Text too long ï¿½ trim it down" : mode === "topic" ? "Generate Study Materials" : "Generate Study Materials"}
               </>
             )}
           </button>
@@ -394,7 +394,7 @@ export default function WorkspacePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                   <span>Topic: <span className="text-white font-medium">{results._topic}</span></span>
-                  <span className="text-slate-600">·</span>
+                  <span className="text-slate-600">ï¿½</span>
                   <span className="capitalize text-slate-500">{results._difficulty} level</span>
                 </div>
               )}
